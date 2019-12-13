@@ -1,0 +1,46 @@
+# Insertion sort
+
+Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. **It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.**
+
+## Advantages
+
+1. Simple implementation: Jon Bentley shows a three-line C version, and a five-line optimized version
+1. **Efficient for (quite) small data sets**, much like other quadratic sorting algorithms
+1. More efficient in practice than most other simple quadratic (i.e., O(n2)) algorithms such as selection sort or bubble sort
+1. Adaptive, i.e., efficient for data sets that are already substantially sorted: the time complexity is O(kn) when each element in the input is no more than k places away from its sorted position
+1. **Stable**; i.e., does not change the relative order of elements with equal keys
+1. **In-place**; i.e., only requires a constant amount O(1) of additional memory space
+1. **Online**; i.e., can sort a list as it receives it
+
+## Implementaton
+
+![](../../Images/Algorithm/SortingAlgorithm/Insertion%20sort.gif)
+
+```
+func insertSort(nums []int) {
+	nLen := len(nums)
+	for i := 1; i < nLen; i++ {
+		num := nums[i]
+		for j := i - 1; j >= 0; j-- {
+			if nums[j] > num {
+				nums[j+1] = nums[j]
+			} else {
+				nums[j+1] = num
+				break
+			}
+		}
+		if nums[0] > num {
+			nums[0] = num
+		}
+	}
+}
+```
+
+## Time Complexity
+
+O(n^2)
+
+## Reference
+
+1. [Wikipedia: Insertion sort](https://en.wikipedia.org/wiki/Insertion_sort)
+1. [cnblogs:十大经典排序算法（动图演示）](https://www.cnblogs.com/onepixel/p/7674659.html)
