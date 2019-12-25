@@ -1,11 +1,15 @@
-## 系统调度器
+# Goroutine
+
+## 调度
+
+### 系统调度器
 
 - 三个状态：Waiting Runnable Executing。
 - 抢占式调度，无法预测线程的执行顺序（按时间片调度线程）。
 - 线程被切换出去的情况：
 - 执行阻塞操作，如：IO请求。
 
-## Goroutine调度器
+### Goroutine调度器
 
 - 演化过程
 - 12年Go1.0中，只是用G-M模型，goroutine对应runtime中的结构G，系统线程对应结构M。
@@ -39,7 +43,7 @@ runtime.schedule() {
 }
 ```
 
-## 基本概念：
+### 基本概念：
 
 - M，系统线程，为runtime2.go中的type m。保存了锁、mcache、阻塞状态等。
 - P，Logical Processer，为runtime2.go中的type p。保存了G队列、cache、mcache、锁、gc状态等。
@@ -56,3 +60,9 @@ runtime.schedule() {
 - M需要保存大量的G状态。
 - G在不同的M之间切换导致大量的缓存（也就是保存的状态）以及锁的开销。
 - 为了降低锁的粒度，以及提高缓存的利用率，在M和G之间加了一个P。M调度G的时候直接调用相应的P。P保存了G运行的上下文。每个P保存了一个G队列，所以G在P之间切换比较少见，只有在进行（stealing schedule）这样特殊时候才会发生。
+
+## 泄露
+
+1. 向未初始化或者已经关闭的 channel 写入数据。
+1. 向未初始化或者已经关闭的 channel 读数据。
+1. 死循环。

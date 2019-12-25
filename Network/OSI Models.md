@@ -48,7 +48,7 @@ The Session layer is also called as the layer 5 of the OSI model. Here are the b
 1. Responsibele for establishment, management and termination of connections between applicatins
 1. The session layer sets up, coordinates ans terminates conversations, exchangees, and dialogues between the applications at each end
 1. It deals with session and connection coordination
-1. Protocols like NFS,  NetBios names, RPC, SQL work at this layer
+1. Protocols like NFS,  NetBios names, RPC, SQL, SSl work at this layer
 
 ### Presentation layer
 
