@@ -43,6 +43,8 @@ typedef struct dictht{
 
 ## 渐进式 Rehash
 
+rehash是在hash table的大小不能满足需求，造成过多hash碰撞后需要进行的扩容hash table的操作。
+
 由于 Redis 的 Rehash 操作是将 ht\[0\] 中的键值全部迁移到 ht\[1\]，如果数据量小，则迁移过程很快。但如果数据量很大，一个 Hash 表中存储了几万甚至几百万几千万的键值时，迁移过程很慢并会影响到其他用户的使用。
 
 为了避免 Rehash 对服务器性能造成影响，Redis 采用了一种渐进式 Rehash 的策略，分多次、渐进的将 ht\[0\] 中的数据迁移到 ht\[1\] 中。
