@@ -31,7 +31,7 @@ TCP协议规定，只有ACK=1时有效，也规定连接建立后所有发送的
 
 ## 三次握手
 
-![](../Images/Network/TCPHandshake/1.png)
+![](../images/network/tcp_handshake/1.png)
 
 1. 第一次握手
 客户端发送连接请求报文段，将SYN位置为1，Sequence Number为x
@@ -46,7 +46,7 @@ TCP协议规定，只有ACK=1时有效，也规定连接建立后所有发送的
 
 ## 四次挥手
 
-![](../Images/Network/TCPHandshake/2.png)
+![](../images/network/tcp_handshake/2.png)
 
 1. 第一次挥手
 主机1（可以使客户端，也可以是服务器端），设置Sequence Number和Acknowledgment Number，向主机2发送一个FIN报文段
@@ -67,4 +67,4 @@ TCP协议规定，只有ACK=1时有效，也规定连接建立后所有发送的
 
 ## TCP 状态转换
 
-![](../Images/Network/TCPHandshake/3.png)
+![](../images/network/tcp_handshake/3.png)

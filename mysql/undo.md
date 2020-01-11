@@ -1,7 +1,3 @@
-# Redo
-
-The redo log is a disk-based data structure used during crash recouvery to correct data written by incomplete transactions.
-
 # Undo
 
 1. An undo log record contains information about how to undo the latest change by a transaction to a clustered index record.

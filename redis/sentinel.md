@@ -23,7 +23,7 @@ This is the full list of Sentinel capabilities at a macroscopical level (i.e. th
 
 若没有足够数量的 Sentinel（哨兵）进程同意 Master 主服务器下线， Master 主服务器的客观下线状态就会被移除。若 Master 主服务器重新向 Sentinel（哨兵）进程发送 PING 命令返回有效回复，Master 主服务器的主观下线状态就会被移除。
 
-![](../images/redis/sentinel/1.jpg)
+![](images/sentinel/1.jpg)
 
 ## reference
 
