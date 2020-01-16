@@ -1,0 +1,47 @@
+# Radix sort
+
+In computer science, radix sort is a non-comparative sorting algorithm. It avoids comparison by creating and distributing elements into buckets according to their radix. For elements with more than one significant digit, this bucketing process is repeated for each digit, while preserving the ordering of the prior step, until all digits have been considered. For this reason, radix sort has also been called bucket sort and digital sort.
+
+Radix sort can be applied to data that can be sorted lexicographically, be they integers, words, punch cards, playing cards, or the mail.
+
+## Implementation
+
+![](../images/sorting_algorithm/radix/1.gif)
+
+```
+func radioSort(nums []int) {
+	nLen := len(nums)
+	if nLen < 2 {
+		return
+	}
+
+	i, cntBucket := 1, 10
+	for {
+		bucket := make([][]int, cntBucket)
+		for j := 0; j < nLen; j++ {
+			idxBucket := nums[j] / i % 10
+			bucket[idxBucket] = append(bucket[idxBucket], nums[j])
+		}
+
+		if len(bucket[0]) == nLen {
+			break
+		}
+		
+		idx := 0
+		for x := 0; x < cntBucket; x++ {
+			lenBucket := len(bucket[x])
+			for y := 0; y < lenBucket; y++ {
+				nums[idx] = bucket[x][y]
+				idx++
+			}
+		}
+		
+		i *= 10
+	}
+}
+```
+
+## Reference
+
+1. [Wikipedia: Radix sort](https://en.wikipedia.org/wiki/Radix_sort)
+1. [cnblogs:十大经典排序算法（动图演示）](https://www.cnblogs.com/onepixel/p/7674659.html)
