@@ -95,7 +95,7 @@ func (d *DisjointSet) Union(i, j int) {
 }
 ```
 
-## Reference
+## 引用
 
 1. [Wikipedia: Disjoint-set data structure](https://en.wikipedia.org/wiki/Disjoint-set_data_structure#Time_complexity)
 1. [GeeksforGeeks: Disjoint Set (Or Union-Find) | Set 1 (Detect Cycle in an Undirected Graph))](https://www.geeksforgeeks.org/union-find/)

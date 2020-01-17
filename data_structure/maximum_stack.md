@@ -6,6 +6,6 @@ Below is the step by step algorithm to do this:
 1. If we pop an element from the main stack, then pop an element from the trackStack as well.
 1. Now to compute the maximum of the main stack at any point, we can simply print the top element of Track stack.
 
-## Reference
+## 引用
 
 1. [GeeksforGeeks: Tracking current Maximum Element in a Stack](https://www.geeksforgeeks.org/tracking-current-maximum-element-in-a-stack/)

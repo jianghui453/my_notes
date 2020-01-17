@@ -1,1 +1,0 @@
-![](../Images/ComputerSystem/FundamentalsOfCompiling/1.png)

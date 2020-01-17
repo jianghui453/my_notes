@@ -19,7 +19,7 @@ F : set of final state.
 In a DFA, for a particular input character, the machine goes to one state only. A transition function is defined on every state for every input symbol. Also in DFA null (or ε) move is not allowed, i.e., DFA cannot change state without any input character.
 For example, below DFA with ∑ = {0, 1} accepts all strings ending with 0.
 
-![](../Images/Algorithm/FSA/roduction_1.jpeg)
+![](images/fsa/1.jpeg)
 
 One important thing to note is, there can be many possible DFAs for a pattern. A DFA with minimum number of states is generally preferred.
  
@@ -34,7 +34,7 @@ Due to above additional features, NFA has a different transition function, rest 
 As you can see in transition function is for any input including null (or ε), NFA can go to any state number of states.
 For example, below is a NFA for above problem
 
-![](../Images/Algorithm/FSA/roduction_2.jpeg)
+![](images/fsa/2.jpeg)
 
 One important thing to note is, in NFA, if any path for an input string leads to a final state, then the input string accepted. For example, in above NFA, there are multiple paths for input string “00”. Since, one of the paths leads to a final state, “00” is accepted by above NFA.
  

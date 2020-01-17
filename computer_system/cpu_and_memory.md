@@ -1,6 +1,6 @@
 最基本的处理器与内存以及io设备的架构：
 
-![](../Images/ComputerSystem/CPUAndMemory/1.png)
+![](images/cpu_and_memory/1.png)
 
 - 近期的RAM需要两条独立总线(或者说通道，DDR2就是这么叫的)，可以实现带宽加倍。
 - 内存寻址

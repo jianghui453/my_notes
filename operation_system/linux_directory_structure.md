@@ -78,6 +78,6 @@ root用户的用户目录
 
 和usr相对的保存可写的程序文件，如，日志文件
 
-## Reference
+## 引用
 
 1. [HowToGeek: The Linux Directory Structure, Explained](https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/)

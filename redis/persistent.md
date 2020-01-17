@@ -42,6 +42,16 @@ If you care a lot about your data, but still can live with a few minutes of data
 
 There are many users using AOF alone, but we discourage it since to have an RDB snapshot from time to time is a great idea for doing database backups, for faster restarts, and in the event of bugs in the AOF engine.
 
-## reference
+## 启动时加载
+
+RDB文件的载入工作是在服务器启动时自动执行的，并没有专门的命令。但是由于AOF的优先级更高，因此当AOF开启时，Redis会优先载入AOF文件来恢复数据；只有当AOF关闭时，才会在Redis服务器启动时检测RDB文件，并自动载入。服务器载入RDB文件期间处于阻塞状态，直到载入完成为止。
+
+Redis启动日志中可以看到自动载入的执行：
+
+![](images/persistent/1.png)
+
+Redis载入RDB文件时，会对RDB文件进行校验，如果文件损坏，则日志中会打印错误，Redis启动失败。
+
+## 引用
 
 1. [redis: Redis Persistence](https://redis.io/topics/persistence)

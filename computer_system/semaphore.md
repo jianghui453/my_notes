@@ -6,6 +6,6 @@ A useful way to think of a semaphore as used in the real-world system is as a re
 
 Semaphores are a useful tool in the prevention of race conditions; however, their use is by no means a guarantee that a program is free from these problems. Semaphores which allow an arbitrary resource count are called counting semaphores, while semaphores which are restricted to the values 0 and 1 (or locked/unlocked, unavailable/available) are called binary semaphores and are used to implement locks.
 
-## Reference
+## 引用
 
 1. [Wikipedia: Semaphore (programming)](https://en.wikipedia.org/wiki/Semaphore_(programming))

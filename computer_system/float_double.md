@@ -6,6 +6,6 @@
 
 **double** is a 64 bit IEEE 754 double precision Floating Point Number (1 bit for the sign, 11 bits for the exponent, and 52* bits for the value), i.e. double has 15 decimal digits of precision.
 
-## references
+## 引用
 
 1. [GeeksforGeeks: Difference between float and double in C/C++](https://www.geeksforgeeks.org/difference-float-double-c-cpp/)

@@ -83,7 +83,7 @@ h = log n
 
 (0 * n/2) + (1 * n/4) + (2 * n/8) + ... + (h * 1) 
 
-![img](../Images/DataStructures/Heap/1.png)
+![img](images/heap/1.png)
 
 ##### sift up:
 
@@ -104,7 +104,7 @@ Clearly, the loop runs O(n) times (n -1 to be precise, the last item is already 
 - Priority Queue: Priority queue can be effciently implemented using Binary Heap because it supports insert(), delete() and extractmax(), decreseKey() operations in O(log n) time comlexity.
 - Order Statistics: The Heap data structure can be used to efficiently find the kth smallest (or largest) element in an array. Using Max Heap to get  k maximum elements from  the Max Heap O(k log n ).
 
-## Reference
+## 引用
 
 1. [stackoverflow: How can building a heap be O(n) time complexity?](https://stackoverflow.com/questions/9755721/how-can-building-a-heap-be-on-time-complexity)
 1. [Wikipedia: Heap (data structure)](https://en.wikipedia.org/wiki/Heap_(data_structure))

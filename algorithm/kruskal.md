@@ -12,7 +12,7 @@ Kruskal's algorithm is a **minimum-spanning-tree** algorithm which finds an edge
 
 Let us understand it with an example: Consider the below input graph.
 
-![img](../Images/Algorithm/Kruskal/1.jpg)
+![img](images/kruskal/1.jpg)
 
 The graph contains 9 vertices and 14 edges. So, the minimum spanning tree formed will be having (9 – 1) = 8 edges.
 
@@ -20,38 +20,38 @@ Now pick all edges one by one from sorted list of edges
 
 1. Pick edge 7-6: No cycle is formed, include it.
 
-![img](../Images/Algorithm/Kruskal/2.jpg)
+![img](images/kruskal/2.jpg)
 
 2. Pick edge 8-2: No cycle is formed, include it.
 
-![img](../Images/Algorithm/Kruskal/3.jpg)
+![img](images/kruskal/3.jpg)
 
 3. Pick edge 6-5: No cycle is formed, include it.
 
-![img](../Images/Algorithm/Kruskal/4.jpg)
+![img](images/kruskal/4.jpg)
 
 4. Pick edge 0-1: No cycle is formed, include it.
 
-![img](../Images/Algorithm/Kruskal/5.jpg)
+![img](images/kruskal/5.jpg)
 
 5. Pick edge 2-5: No cycle is formed, include it.
 
-![img](../Images/Algorithm/Kruskal/6.jpg)
+![img](images/kruskal/6.jpg)
 
 6. Pick edge 8-6: Since including this edge results in cycle, discard it.
 7. Pick edge 2-3: No cycle is formed, include it.
 
-![img](../Images/Algorithm/Kruskal/7.jpg)
+![img](images/kruskal/7.jpg)
 
 8. Pick edge 7-8: Since including this edge results in cycle, discard it.
 9. Pick edge 0-7: No cycle is formed, include it.
 
-![img](../Images/Algorithm/Kruskal/8.jpg)
+![img](images/kruskal/8.jpg)
 
 10. Pick edge 1-2: Since including this edge results in cycle, discard it.
 11. Pick edge 3-4: No cycle is formed, include it.
 
-![img](../Images/Algorithm/Kruskal/9.jpg)
+![img](images/kruskal/9.jpg)
 
 Since the number of edges included equals (V – 1), the algorithm stops here.
 

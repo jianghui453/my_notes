@@ -4,7 +4,7 @@
 
 1. Leaf Nodes are the elements of the input array.
 2. Each internal node represents some merging of the leaf nodes. The merging may be different for different problems. For this problem, merging is sum of leaves under a node.
-![](../Images/DataStructures/segment_tree/1.png)
+![](images/segment_tree/1.png)
 
 ## How does above segment tree look in memory?
 
@@ -45,6 +45,6 @@ int getSum(node, l, r)
 
 Like tree construction and query operations, the update can also be done recursively. We are given an index which needs to be updated. Let diff be the value to be added. We start from the root of the segment tree and add diff to all nodes which have given index in their range. If a node doesn’t have a given index in its range, we don’t make any changes to that node.
 
-## Reference
+## 引用
 
 1. [GeeksforGeeks: Segment Tree | Set 1 (Sum of given range)](https://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/)

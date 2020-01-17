@@ -33,6 +33,6 @@ Proof:Let n be the total no. of nodes in binary tree.
                         n0 = n2 + 1
 ```
 
-## reference
+## 引用
 
 1. [Algorithms And Data Structures](http://cs-algorithms-and-datastructures.blogspot.com/2012/11/some-basics-about-trees.html)

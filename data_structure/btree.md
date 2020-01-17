@@ -62,9 +62,9 @@ Since most of the keys in a B-tree are in the leaves, deletion operations are mo
 
 The following figures explain the deletion process.
 
-![img](../Images/DataStructures/BTree/1.png)
+![img](images/btree/1.png)
 
-![img](../Images/DataStructures/BTree/2.png)
+![img](images/btree/2.png)
 
 ## Reference
 

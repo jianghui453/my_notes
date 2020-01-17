@@ -26,32 +26,32 @@ Tracking the color of each node requires only 1 bit of information per node beca
         1. color of grand parent as RED.
         1. Change x = x’s grandparent, repeat steps 2 and 3 for new x.
     
-    ![](../Images/DataStructures/rbtree/1.png)
+    ![](images/rbtree/1.png)
 
     1. If x’s uncle is BLACK, then there can be four configurations for x, x’s parent (p) and x’s grandparent (g) (This is similar to AVL Tree)
         1. Left Left Case (p is left child of g and x is left child of p)
-        ![](../Images/DataStructures/rbtree/2.png)
+        ![](images/rbtree/2.png)
         1. Left Right Case (p is left child of g and x is right child of p)
-        ![](../Images/DataStructures/rbtree/3.png)
+        ![](images/rbtree/3.png)
         1. Right Right Case (Mirror of case i)
-        ![](../Images/DataStructures/rbtree/4.png)
+        ![](images/rbtree/4.png)
         1. Right Left Case (Mirror of case ii)    
-        ![](../Images/DataStructures/rbtree/5.png)
+        ![](images/rbtree/5.png)
 
 ### Examples of Insertion
 
-![](../Images/DataStructures/rbtree/6.png)
+![](images/rbtree/6.png)
 
 Exercise:
 Insert 2, 6 and 13 in below tree.
 
-![](../Images/DataStructures/rbtree/7.png)
+![](images/rbtree/7.png)
 
 ## Delete
 
 
 
-## Reference
+## 引用
 
 - [WikiPedia: Red–black tree](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)
 - [GeeksforGeeks: Red-Black Tree | Set 2 (Insert)](https://www.geeksforgeeks.org/red-black-tree-set-2-insert/)

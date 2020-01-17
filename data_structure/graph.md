@@ -12,7 +12,7 @@ Graphs are used to represent many real-life applications: Graphs are used to rep
 - 参考下面这个有五个节点的无向图
 Following is an example of an undirected graph with 5 vertices.
 
-![](../Images/DataStructures/Graph/1.png)
+![](images/graph/1.png)
 
 - 参考这两个具有代表性的图实例
 Following two are the most commonly used representations of a graph.
@@ -29,7 +29,7 @@ Adjacency Matrix is a 2D array of size V x V where V is the number of vertices i
 - 一个邻接矩阵的例子
 The adjacency matrix for the above example graph is:
 
-![](../Images/DataStructures/Graph/2.png)
+![](images/graph/2.png)
 
 Pros: Representation is easier to implement and follow. Removing an edge takes O(1) time. Queries like whether there is an edge from vertex ‘u’ to vertex ‘v’ are efficient and can be done O(1).
 Cons: Consumes more space O(V^2). Even if the graph is sparse(contains less number of edges), it consumes the same space. Adding a vertex is O(V^2) time.
@@ -39,4 +39,4 @@ Adjacency List:
 - 邻接链表，使用一个链表数组。数组的大小等于顶点的个数。设一个数组array[]， array[i]是一个顶点 i 能连接到的顶点链表。这个表示法同样支持加权图。边的权值可以表示为对的列表。
 An array of lists is used. Size of the array is equal to the number of vertices. Let the array be array[]. An entry array[i] represents the list of vertices adjacent to the ith vertex. This representation can also be used to represent a weighted graph. The weights of edges can be represented as lists of pairs. Following is adjacency list representation of the above graph.
 
-![](../Images/DataStructures/Graph/3.png)
+![](images/graph/3.png)

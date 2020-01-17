@@ -23,6 +23,6 @@ Kafka中的时间轮（TimingWheel）是一个存储定时任务的环形队列�
 1. 除了第一层时间轮，其余高层时间轮的起始时间(startMs)都设置为创建此层时间轮时前面第一轮的currentTime。每一层的currentTime都必须是tickMs的整数倍，如果不满足则会将currentTime修剪为tickMs的整数倍，以此与时间轮中的时间格的到期时间范围对应起来。修剪方法为：currentTime = startMs - (startMs % tickMs)。currentTime会随着时间推移而推荐，但是不会改变为tickMs的整数倍的既定事实。若某一时刻的时间为timeMs，那么此时时间轮的currentTime = timeMs - (timeMs % tickMs)，时间每推进一次，每个层级的时间轮的currentTime都会依据此公式推进。
 1. Kafka中的定时器只需持有TimingWheel的第一层时间轮的引用，并不会直接持有其他高层的时间轮，但是每一层时间轮都会有一个引用（overflowWheel）指向更高一层的应用，以此层级调用而可以实现定时器间接持有各个层级时间轮的引用。
 
-## references
+## 引用
 
 1. [Kafka解惑之时间轮（TimingWheel）](https://blog.csdn.net/u013256816/article/details/80697456)

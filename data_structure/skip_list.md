@@ -2,7 +2,7 @@
 
 See the following example list with 16 nodes and two layers. The upper layer works as an “express lane” which connects only main outer stations, and the lower layer works as a “normal lane” which connects every station. Suppose we want to search for 50, we start from first node of “express lane” and keep moving on “express lane” till we find a node whose next is greater than 50. Once we find such a node (30 is the node in following example) on “express lane”, we move to “normal lane” using pointer from this node, and linearly search for 50 on “normal lane”. In following example, we start from 30 on “normal lane” and with linear search, we find 50.
 
-![](../Images/DataStructures/SkipList/1.png)
+![](images/skip_list/1.jpg)
 
 ## What is the time complexity with two layers?
 
@@ -23,15 +23,14 @@ return lvl
 
 Each node carries a key and a forward array carrying pointers to nodes of a different level. A level i node carries i forward pointers indexed through 0 to i.
 
-![](../Images/DataStructures/SkipList/2.jpg)
+![](images/skip_list/2.jpg)
 
 We will start from highest level in the list and compare key of next node of the current node with the key to be inserted. Basic idea is If –
 
 1. Key of next node is less than key to be inserted then we keep on moving forward on the same level.
 1. Key of next node is greater than the key to be inserted then we store the pointer to current node i at update and move one level down and continue our search.
 
-![](../Images/DataStructures/SkipList/3.jpg)
-
+![](images/skip_list/3.jpg)
 
 ## Code
 
@@ -181,7 +180,7 @@ func (s *SkipList) genRandomLevel() int {
 }
 ```
 
-## Reference
+## 引用
 
 1. [GeeksforGeeks: Skip List | Set 1 (Introduction)](https://www.geeksforgeeks.org/skip-list/)
 1. [GeeksforGeeks: Skip List | Set 2 (Insertion)](https://www.geeksforgeeks.org/skip-list-set-2-insertion/)

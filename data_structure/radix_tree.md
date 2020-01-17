@@ -32,8 +32,8 @@ and you need only five nodes. In the picture above nodes are the asterisks.
 
 So, overall, a radix tree takes less memory, but it is harder to implement. Otherwise the use case of both is pretty much the same.
 
-![](../Images/DataStructures/RadixTree/1.png)
+![](images/radix_tree/1.png)
 
-## Reference
+## 引用
 
 1. [stackoverflow: What is the difference between trie and radix trie data structures?](https://stackoverflow.com/questions/14708134/what-is-the-difference-between-trie-and-radix-trie-data-structures)

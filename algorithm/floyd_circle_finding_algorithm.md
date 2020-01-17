@@ -2,7 +2,7 @@
 
 用快慢两个指针分别从链表头开始，慢指针 -> next，快指针 -> next -> next，这样如果有环那快指针务必会跑到慢指针后面，随即两者之间的距离一次会缩小一步，最终相遇。若是未相遇且快指针的 next 为 null，则说明链表无环。
 
-![](../images/algorithm/floyd_circle_finding_algorithm/1.png)
+![](images/floyd_circle_finding_algorithm/1.png)
 
 一切清晰明了。让我们再来捋一捋。
 
