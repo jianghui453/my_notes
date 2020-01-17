@@ -7,6 +7,6 @@
 - Source IP hash – Combines the source and destination IP address in a request to generate a hash key, which is then designated to a specific server. This lets a dropped connection be returned to the same server originally handling it.
 - consitent_hasing
 
-## references
+## 引用
 
 1. [Load Balancing Algorithms](https://www.imperva.com/learn/availability/load-balancing-algorithms/)

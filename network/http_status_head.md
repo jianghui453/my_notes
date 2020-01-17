@@ -74,6 +74,6 @@ Indicates the URL to redirect a page to.
 
 #### Other
 
-## references
+## 引用
 
 - [Mozilla: HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)

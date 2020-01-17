@@ -85,6 +85,6 @@ pagemap_cache_
 
 #### 分配和回收都是批量处理的。申请时会多申请，回收时达到阈值才回收到上一级。
 
-## references
+## 引用
 
 1. [阿里云：tcmalloc浅析](https://yq.aliyun.com/articles/6045)

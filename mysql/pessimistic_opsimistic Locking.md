@@ -22,7 +22,7 @@ Optimistic concurrency control (OCC) is a concurrency control method applied to 
 
 OCC is generally used in environments with low data contention. When conflicts are rare, transactions can complete without the expense of managing locks and without having transactions wait for other transactions' locks to clear, leading to higher throughput than other concurrency control methods. However, if contention for data resources is frequent, the cost of repeatedly restarting transactions hurts performance significantly; it is commonly thought that other concurrency control methods have better performance under these conditions.[citation needed] However, locking-based ("pessimistic") methods also can deliver poor performance because locking can drastically limit effective concurrency even when deadlocks are avoided.
 
-### Reference
+### 引用
 
 1. [Optimistic vs. Pessimistic locking](https://stackoverflow.com/questions/129329/optimistic-vs-pessimistic-locking)
 2. [Optimistic concurrency control](https://en.wikipedia.org/wiki/Optimistic_concurrency_control)

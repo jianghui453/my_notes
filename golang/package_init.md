@@ -2,7 +2,7 @@
 
 ## 包的初始化
 
-![](../Images/Golang/package_init/1.png)
+![](images/package_init/1.png)
 
 ## 特性
 
@@ -10,6 +10,6 @@ init 函数不需要传入参数，也不会返回任何值。与 main 相比而
 
 init 函数常用的一个例子就是用来设置初始表达式的值。
 
-## Reference
+## 引用
 
 1. [CSDN: Go init函数详解](https://blog.csdn.net/benben_2015/article/details/79486077)

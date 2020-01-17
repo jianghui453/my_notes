@@ -6,6 +6,6 @@
 1. In the defer statements, the arguments are evaluated when the defer statement executed, not when they called.
 1. Defer statements are generally used to ensure that the files are closed when your work is finished with them, or to close the channel, or to catch the panics in the program.
 
-## Rederence
+## 引用
 
 1. [GeeksforGeeks: Defer Keyword in Golang](https://www.geeksforgeeks.org/defer-keyword-in-golang/)

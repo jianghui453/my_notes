@@ -78,6 +78,6 @@ For locking reads (SELECT with FOR UPDATE or FOR SHARE), UPDATE, and DELETE stat
 
 This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SELECT statements to SELECT ... FOR SHARE if autocommit is disabled. If autocommit is enabled, the SELECT is its own transaction. It therefore is known to be read only and can be serialized if performed as a consistent (nonlocking) read and need not block for other transactions. (To force a plain SELECT to block if other transactions have modified the selected rows, disable autocommit.)
 
-## Reference
+## 引用
 
 1. [MySQL Document: InnoDB and the ACID Model](https://dev.mysql.com/doc/refman/8.0/en/mysql-acid.html)

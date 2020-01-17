@@ -6,7 +6,7 @@
 
 谈及分布式系统，就不能不提到 CAP 理论，CAP 理论由 Berkeley 的计算机教授 Eric Brewer 在2000年提出，其核心思想是任何基于网络的数据共享系统最多只能满足数据一致性  (Consistency)、可用性 (Availability) 和网络分区容忍 (Partition Tolerance) 三个特性中的两个
 
-![](../Images/DistributedSystem/ConsistencyInDistributedSystem/1.png)
+![](images/consistency/1.png)
 
 - **一致性（Consistency）**：一致性，这个和数据库ACID的一致性类似，但这里关注的是所有数据节点上的数据一致性和正确性，而数据库的ACID关注的是在一个事务内，对数据的一些约束。系统在执行过某项操作后仍然处于一致的状态。在分布式系统中，更新操作执行成功后所有的用户都应该读取到最新值。
 - **可用性（Availability）**：每一个操作总是能够在一定时间内返回结果。需要注意"一定时间"和"返回结果"。"一定时间"是指，系统结果必须在给定时间内返回。"返回结果"是指系统返回操作成功或失败的结果。
@@ -39,7 +39,7 @@ BASE是Basically Available（基本可用）、Soft state（软状态）和Event
 
 这种实现方式实现比较简单，比较适合传统的单体应用，在同一个方法中存在跨数据库操作的情况。但是因为两阶段的提交会创建多次节点的网络通信，通信时间变长后，事务的时间也相对变长，锁定的资源时间也变长，造成资源等待时间也变长，这会带来严重的性能问题，因此大部分高并发服务往往都避免使用二阶段提交协议，所以后来业界又引入了三阶段提交协议来解决该类问题。
 
-![](../Images/DistributedSystem/ConsistencyInDistributedSystem/2.png)
+![](images/consistency/2.png)
 
 ### 非事务型消息队列+本地消息表
 
@@ -49,7 +49,7 @@ BASE是Basically Available（基本可用）、Soft state（软状态）和Event
 1. 消息消费方：处理消息并完成自己的业务逻辑。此时如果本地事务处理成功，那发送给生产方一个confirm消息，表明已经处理成功了。如果处理失败，则将消息放回MQ。
 1. 生产方定时扫描本地消息表，把还没处理完成的消息重新发送一遍，直到本地消息表中记录的该消息为已成功状态。
 
-![](../Images/DistributedSystem/ConsistencyInDistributedSystem/3.png)
+![](images/consistency/3.png)
 
 通过上图可以看出，消费方会面临一个问题就是，当消费方完成本地事务处理，给生产方发送CONFIRM消息失败时，生产方由于本地消息表的消息状态没有更新，会进行重试，那么这时候就存在了消息重复投递的问题，这时候消费方收到重复投递过来的消息后，要保证消费者调用业务的服务接口的幂等性，即：如果重复消费，也不能因此影响业务结果，同一消息多次被执行会得到相同的结果。
 
@@ -61,8 +61,8 @@ BASE是Basically Available（基本可用）、Soft state（软状态）和Event
 
 RocketMQ第一阶段发送Prepared消息时，会拿到消息的地址，第二阶段执行本地事物，第三阶段通过第一阶段拿到的地址去访问消息，并修改状态。细心的读者可能又发现问题了，如果确认消息发送失败了怎么办？RocketMQ会定期扫描消息集群中的事物消息，这时候发现了Prepared消息，它会向消息发送者确认，Bob的钱到底是减了还是没减呢？如果减了是回滚还是继续发送确认消息呢？RocketMQ会根据发送端设置的策略来决定是回滚还是继续发送确认消息。这样就保证了消息发送与本地事务同时成功或同时失败。
 
-![](../Images/DistributedSystem/ConsistencyInDistributedSystem/4.png)
+![](images/consistency/4.png)
 
-## Reference
+## 引用
 
 1. [克莱因瓶：分布式系统数据一致性的解决方案](https://www.cnblogs.com/wangweitr/p/7505712.html)

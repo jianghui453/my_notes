@@ -23,7 +23,7 @@ Binlog组提交的基本思想是，引入队列机制保证Innodb commit顺序�
 
 从上图可以看出，每个阶段都有一个队列，每个队列有一个mutex保护，约定进入队列第一个线程为leader，其他线程为follower，所有事情交由leader去做，leader做完所有动作后，通知follower刷盘结束。BLGC就是将事务提交分为了3个阶段，FLUSH阶段，SYNC阶段和COMMIT阶段。
 
-## references
+## 引用
 
 1. [MySQL Redo/Binlog Group Commit , 2pc事务两阶段提交，Crash Recovery浅析](https://segmentfault.com/a/1190000014810628)
 1. [MySQL 中Redo与Binlog顺序一致性问题](https://www.cnblogs.com/xibuhaohao/p/10899586.html)

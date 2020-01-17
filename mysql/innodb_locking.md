@@ -42,6 +42,6 @@ To handle locking for operations involving SPATIAL indexes, next-key locking doe
 
 To enable support of isolation levels for tables with SPATIAL indexes, InnoDB uses predicate locks. A SPATIAL index contains minimum bounding rectangle (MBR) values, so InnoDB enforces consistent read on the index by setting a predicate lock on the MBR value used for a query. Other transactions cannot insert or modify a row that would match the query condition.
 
-## Reference
+## 引用
 
 1. [MySQL Document: InnoDB Locking](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking.html)

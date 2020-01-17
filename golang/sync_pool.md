@@ -59,6 +59,6 @@ func newPrinter() *pp {
 }
 ```
 
-## reference
+## 引用
 
 1. [掘金：由浅入深聊聊Golang的sync.Pool](https://juejin.im/post/5d4087276fb9a06adb7fbe4a)

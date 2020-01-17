@@ -61,6 +61,6 @@ Redo log的存储都是以 块(block) 为单位进行存储的，每个块的大
 
 一个日志文件由多个块所构成，多个日志文件形成一个重做日志文件组(redo log group)。不过，log group是一个逻辑上的概念，真实的磁盘上不会这样存储。
 
-## references
+## 引用
 
 1. [MySQL之Redo Log](https://zhuanlan.zhihu.com/p/35355751)

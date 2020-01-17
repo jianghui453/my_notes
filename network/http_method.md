@@ -60,6 +60,6 @@ The OPTIONS method describes the communication options for the target resource.
 | Security | GET is less secure compared to POST because data sent is part of the URL Never use GET when sending passwords or other sensitive information! | POST is a little safer than GET because the parameters are not stored in browser history or in web server logs |
 | Visibility | Data is visible to everyone in the URL | Data is not displayed in the URL |
 
-## Reference
+## 引用
 
 1. [W3cschool: HTTP Request Methods](https://www.w3schools.com/tags/ref_httpmethods.asp)

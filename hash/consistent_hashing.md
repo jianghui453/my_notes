@@ -24,35 +24,35 @@ Consistent Hashing is a distributed hashing scheme that operates independently o
 
 Imagine we mapped the hash output range onto the edge of a circle. That means that the minimum possible hash value, zero, would correspond to an angle of zero, the maximum possible value (some big integer we’ll call INT\_MAX) would correspond to an angle of 2𝝅 radians (or 360 degrees), and all other hash values would linearly fit somewhere in between. So, we could take a key, compute its hash, and find out where it lies on the circle’s edge. Assuming an INT\_MAX of 1010 (for example’s sake), the keys from our previous example would look like this:
 
-![img](../Images/Hashing/ConsistentHashing/1.png)
+![img](images/consistent_hashing/1.png)
 
 Now imagine we also placed the servers on the edge of the circle, by pseudo-randomly assigning them angles too. This should be done in a repeatable way (or at least in such a way that all clients agree on the servers’ angles). A convenient way of doing this is by hashing the server name (or IP address, or some ID)—as we’d do with any other key—to come up with its angle.
 
 In our example, things might look like this:
 
-![img](../Images/Hashing/ConsistentHashing/2.png)
+![img](images/consistent_hashing/2.png)
 
 Since we have the keys for both the objects and the servers on the same circle, we may define a simple rule to associate the former with the latter: Each object key will belong in the server whose key is closest, in a counterclockwise direction (or clockwise, depending on the conventions used). In other words, to find out which server to ask for a given key, we need to locate the key on the circle and move in the ascending angle direction until we find a server.
 
 In our example:
 
-![img](../Images/Hashing/ConsistentHashing/3.png)
+![img](images/consistent_hashing/3.png)
 
 To ensure object keys are evenly distributed among servers, we need to apply a simple trick: To assign not one, but many labels (angles) to each server. So instead of having labels A, B and C, we could have, say, A0 .. A9, B0 .. B9 and C0 .. C9, all interspersed along the circle. The factor by which to increase the number of labels (server keys), known as weight, depends on the situation (and may even be different for each server) to adjust the probability of keys ending up on each. For example, if server B were twice as powerful as the rest, it could be assigned twice as many labels, and as a result, it would end up holding twice as many objects (on average).
 
 For our example we’ll assume all three servers have an equal weight of 10 (this works well for three servers, for 10 to 50 servers, a weight in the range 100 to 500 would work better, and bigger pools may need even higher weights):
 
-![img](../Images/Hashing/ConsistentHashing/4.png)
+![img](images/consistent_hashing/4.png)
 
 So, what’s the benefit of all this circle approach? Imagine server C is removed. To account for this, we must remove labels C0 .. C9 from the circle. This results in the object keys formerly adjacent to the deleted labels now being randomly labeled Ax and Bx, reassigning them to servers A and B.
 
 But what happens with the other object keys, the ones that originally belonged in A and B? Nothing! That’s the beauty of it: The absence of Cx labels does not affect those keys in any way. So, removing a server results in its object keys being randomly reassigned to the rest of the servers, leaving all other keys untouched:
 
-![img](../Images/Hashing/ConsistentHashing/5.png)
+![img](images/consistent_hashing/5.png)
 
 Something similar happens if, instead of removing a server, we add one. If we wanted to add server D to our example (say, as a replacement for C), we would need to add labels D0 .. D9. The result would be that roughly one-third of the existing keys (all belonging to A or B) would be reassigned to D, and, again, the rest would stay the same:
 
-![img](../Images/Hashing/ConsistentHashing/6.png)
+![img](images/consistent_hashing/6.png)
 
 ## Implementation
 
@@ -118,7 +118,7 @@ Then we can locate the requests within a range by doing the following:
 
 The number of requests that need to be iterated for a given hash update will on average be R/N where R is the number of requests located in the range of the node and N is the number of hashes in the ring, assuming an even distribution of requests.
 
-## Reference
+## 引用
 
 1. [toptal: A Guide to Consistent Hashing](https://www.toptal.com/big-data/consistent-hashing)
 2. [ably: How we efficiently implemented consistent hashing](https://www.ably.io/blog/implementing-efficient-consistent-hashing/)

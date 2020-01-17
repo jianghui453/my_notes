@@ -56,6 +56,6 @@ But distributed, It`s organization is loose, unlike clusters, there is an organi
 
 For example: If a task is composed of 10 subtasks, each subtask needs 1 hours to execute separately, and it takes 10 hours to perform the task on a single server. Using a distributed solution, 10 servers are provided, each server is only responsible for handling a sub task without considering the dependencies between subtasks, and it takes only one hour to complete the task. The cluster scheme also provides 10 servers, each server can handle this task independently. Suppose there are 10 tasks to arrive at the same time, the 10 server will work at the same time,After 1h, 10 tasks finish at same time.It stills finish task in 1hour.
 
-## references
+## 引用
 
 1. [The difference between cluster and distributed](https://www.supinfo.com/articles/single/6495-the-difference-between-cluster-and-distributed)

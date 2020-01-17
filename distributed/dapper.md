@@ -2,7 +2,7 @@
 
 ## 服务调用示例：
 
-![](../Images/DistributedSystem/Dapper/1.png)
+![](images/dapper/1.png)
 
 图中 A~E 分别表示五个服务，用户发起一次 X 请求到前端系统 A，然后 A 分别发送 RPC 请求到中间层 B 和 C，B 处理请求后返回，C 还要发起两个 RPC 请求到后端系统 D 和 E。
 
@@ -19,7 +19,7 @@ Annotation（标注）：用来及时记录一个事件的存在，一些核心 
 
 对于每个 Trace 树，Trace 都要定义一个全局唯一的 Trace ID，在这个跟踪中的所有 Span 都将获取到这个 Trace ID。 每个 Span 都有一个 Parent Span ID 和它自己的 Span ID。上面图中 A 服务的 Parent Span ID 为空，Span ID 为 1；然后 B 服务的 Parent Span ID 为 1，Span ID 为 2；C 服务的 Parent Span ID 也为 1，Span ID 为 3，依次类推，如图所示:
 
-![](../Images/DistributedSystem/Dapper/2.png)
+![](images/dapper/2.png)
 
 ### Span 内部结构
 
@@ -29,7 +29,7 @@ Annotation（标注）：用来及时记录一个事件的存在，一些核心 
 
 Span 的细节图:
 
-![](../Images/DistributedSystem/Dapper/3.png)
+![](images/dapper/3.png)
 
 从图中可以可以很清楚的看出，这是一次 Span 名为 Hello.Call 的调用，Span ID 是 5，Parent Span ID 是 3，Trace ID 是 100。 我们重点看一下 Span 对应的四个状态：
 
@@ -50,7 +50,7 @@ Span 的细节图:
 
 基于标注的方式就是根据请求中的 Trace ID 来获取 Trace 这个实例，各种编程语言有各自的方式。获取到 Trace 实例后就可以调用 Recorder 来记录 Span 了，记录值先直接以日志的形式存在本地，然后跟踪系统会启动一个 Collector Daemon 来收集日志，然后整理日志写入数据库。解析的日志结果建议放在 BigTable (Cassandra 或者 HDFS) 这类稀疏表的数据库里。因为每个 Trace 携带的 Span 可能不一样，最终的记录是每一行代表一个 Trace，这一行的每一列代表一个 Span，如图所示：
 
-![](../Images/DistributedSystem/Dapper/4.png)
+![](images/dapper/4.png)
 
 ## 采样率
 
@@ -66,6 +66,6 @@ Span 数据写入本地日志文件中。
 Dapper 的守护进程和收集组件把这些数据从生产环境的主机中拉出来。
 最终写到 Dapper 的 Bigtable 仓库中。一次跟踪被设计成 Bigtable 中的一行，每一列相当于一个 Span。
 
-## Reference
+## 引用
 
 1. [IBM Developer: 分布式集群环境下调用链路追踪](https://www.ibm.com/developerworks/cn/web/wa-distributed-systems-request-tracing/index.html)

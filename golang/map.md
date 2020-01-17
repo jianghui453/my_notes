@@ -70,6 +70,6 @@ map长度 / 2^B
 
 ![](images/map/move_bucket.png)
 
-## references
+## 引用
 
 1. [解剖Go语言map底层实现](https://i6448038.github.io/2018/08/26/map-secret/)

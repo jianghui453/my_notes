@@ -17,6 +17,6 @@ InnoDB multi-version concurrency control (MVCC) treats secondary indexs differen
 - When a secondary index column is updated, old secondary index records are delete-marked, new records are inserted, and delete-marked records are eventually purged. When a secondary index record is delete-marked or the secondary index page is updated by newer transacton, InnoDB looks up the database record in the clustered index. In the clustered index, the record`s is DB\_TRX\_ID is checked, and the correct version od the record is retrieved from the undo log if record was modified after the reading transaction was initiated.
 - If secondary index record is marked for deletion or the secondary index page is updated by a newer transaction, the covering index technique is not used. Instead of returing values from the index structure, InnoDB looks up the record in the clustered index.
 
-### Reference
+### 引用
 
 1. [MySQL Document: InnoDB Multi-Versioning](https://dev.mysql.com/doc/refman/8.0/en/innodb-multi-versioning.html)

@@ -8,6 +8,6 @@ HTTP is a stateless protocol, meaning that the server does not keep any data (st
 
 ![](images/http/1.png)
 
-## references
+## 引用
 
 1. [HTTP请求报文](https://www.jianshu.com/p/283fd3db9fb2)

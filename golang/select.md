@@ -22,6 +22,6 @@ default: // Statement
 1. The blocking of select statement means when there is no case statement is ready and the select statement does not contain any default statement, then the select statement block until at least one case statement or communication can proceed.
 1. In select statement, if multiple cases are ready to proceed, then one of them can be selected randomly.
 
-## Reference
+## 引用
 
 1. [GeeksforGeeks: Select Statement in Go Language](https://www.geeksforgeeks.org/select-statement-in-go-language/)

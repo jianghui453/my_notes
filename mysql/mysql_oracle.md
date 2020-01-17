@@ -30,6 +30,6 @@
 11. In Oracle, temporary tables are persistent across sessions. The temporary table has to be explicitly removed by the User.
 12. Oracle offers many backup mechanisms including hot backup, backup, import, export and many others.
 
-## Reference
+## 引用
 
 1. [Quora: What's the difference between Oracle and MySQL?](https://www.quora.com/Whats-the-difference-between-Oracle-and-MySQL)
