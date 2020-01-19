@@ -39,8 +39,8 @@ typedef struct dict {
 } dict;
 ```
 
-![](../images/redis/dict/1.png)
+![](images/dict/1.png)
 
-## references
+## 引用
 
 1. [Redis内部数据结构详解(1)——dict](http://zhangtielei.com/posts/blog-redis-dict.html)

@@ -29,6 +29,6 @@ As it is possible to see from the session above, EXEC returns an array of replie
 
 When a Redis connection is in the context of a MULTI request, all commands will reply with the string QUEUED (sent as a Status Reply from the point of view of the Redis protocol). A queued command is simply scheduled for execution when EXEC is called.
 
-## reference
+## 引用
 
 1. [redis: transaction](https://redis.io/topics/transactions)

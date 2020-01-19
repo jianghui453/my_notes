@@ -4,7 +4,7 @@
 
 对称加密更快，但密钥同步容易被截获，所以密钥同步过程中就需要用非对称加密 加密 对称加密密钥。
 
-![](../Images/Network/SSLHandshake/1.png)
+![](images/ssl_handshake/1.png)
 
 1. 客户端发起请求，带上客户端随机数，协议版本，支持的加密方法。
 1. 服务端返回选择的加密方法，服务端随机数，ca证书。
@@ -22,4 +22,4 @@
 
 ## HTTPS连接建立过程
 
-![](../Images/Network/SSLHandshake/2.png)
+![](images/ssl_handshake/2.png)

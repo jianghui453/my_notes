@@ -8,4 +8,4 @@
 
 ## binlog 主备复制
 
-![](../images/mysql/binlog/1.jpg)
+![](images/binlog/1.jpg)

@@ -88,7 +88,7 @@ Assume a TCP protocol experiencing the behavior of slow start. At 5th transmissi
 
 ![](images/tcp可靠传输/7.jpg)
 
-## references
+## 引用
 
 1. [cnblogs: TCP 协议如何保证可靠传输](https://www.cnblogs.com/deliver/p/5471231.html)
 1. [TheGeekStuff: What is TCP Sliding Window? How does it Work?](https://www.thegeekstuff.com/2013/10/tcp-sliding-window/)

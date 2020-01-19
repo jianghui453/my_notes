@@ -2,11 +2,11 @@
 
 ## linux 五种 io 模型
 
-![](../images/operation_system/io_multiplexing/1.png)
+![](images/io_multiplexing/1.png)
 
 ## select
 
-![](../images/operation_system/io_multiplexing/2.png)
+![](images/io_multiplexing/2.png)
 
 ### 缺点
 

@@ -28,7 +28,7 @@ Unlike its original design and purpose, ‘struct mutex’ is among the largest 
 
 Unless the strict semantics of mutexes are unsuitable and/or the critical region prevents the lock from being shared, always prefer them to any other locking primitive.
 
-## Reference
+## 引用
 
 1. [webopedia: mutex - mutual exclusion object](https://www.webopedia.com/TERM/M/mutex.html)
 2. [kernel.org: Generic Mutex Subsystem](https://www.kernel.org/doc/html/latest/locking/mutex-design.html)

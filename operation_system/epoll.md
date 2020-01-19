@@ -4,6 +4,6 @@ epoll is a Linux kernel system call for a scalable I/O event notification mechan
 
 epoll is similar to FreeBSD's kqueue, in that it consists of a set of user-space functions, each taking a file descriptor argument denoting the configurable kernel object, against which they cooperatively operate. epoll used **red-black tree (RB-tree)** data structure to keep track of all file descriptors that are currently being monitored.
 
-## Reference
+## 引用
 
 - [Wikipedia: epoll](https://en.wikipedia.org/wiki/Epoll)

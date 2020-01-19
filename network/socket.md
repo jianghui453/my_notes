@@ -24,6 +24,6 @@ Processes are presumed to communicate only between sockets of the same type but 
 
 - Sequenced Packet Sockets − They are similar to a stream socket, with the exception that record boundaries are preserved. This interface is provided only as a part of the Network Systems (NS) socket abstraction, and is very important in most serious NS applications. Sequenced-packet sockets allow the user to manipulate the Sequence Packet Protocol (SPP) or Internet Datagram Protocol (IDP) headers on a packet or a group of packets, either by writing a prototype header along with whatever data is to be sent, or by specifying a default header to be used with all outgoing data, and allows the user to receive the headers on incoming packets.
 
-## Reference
+## 引用
 
 1. [TutorialsPoint: What is a Socket?](https://www.tutorialspoint.com/unix_sockets/what_is_socket.htm)

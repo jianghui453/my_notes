@@ -66,6 +66,6 @@ The Application layer is also called ad the layer 7 of the OSI model. Here are t
 1. This layer is responsible for application services for file transfer, e-mail, and other network software services
 1. Protocols like Telnet, SSH, FTP, HTTP work on this layer
 
-## Reference
+## 引用
 
 1. [OSI Model And 7 Layers Of OSI Model Explained](https://fossbytes.com/osi-model-7-layers-osi-model-explained/)

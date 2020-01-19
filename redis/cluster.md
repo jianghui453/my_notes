@@ -1,6 +1,6 @@
 # cluster
 
-![](../images/redis/cluster/1.png)
+![](images/cluster/1.png)
 
 ## Redis Cluster goals
 
@@ -26,6 +26,6 @@ To perform their tasks all the cluster nodes are connected using a TCP bus and a
 
 Since cluster nodes are not able to proxy requests, clients may be redirected to other nodes using redirection errors -MOVED and -ASK. The client is in theory free to send requests to all the nodes in the cluster, getting redirected if needed, so the client is not required to hold the state of the cluster. However clients that are able to cache the map between keys and nodes can improve the performance in a sensible way.
 
-## reference
+## 引用
 
 1. [redis: Redis Cluster Specification](https://redis.io/topics/cluster-spec)

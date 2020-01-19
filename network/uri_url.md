@@ -10,7 +10,7 @@ A Uniform Resource Locator (URL), colloquially termed a web address, is a refere
 
 Most web browsers display the URL of a web page above the page in an address bar. A typical URL could have the form *http://www.example.com/index.html*, which indicates a protocol (http), a hostname (www.example.com), and a file name (index.html).
 
-### Reference
+### 引用
 
 1. [Wikipedia: URL](https://en.wikipedia.org/wiki/URL)
 2. [Wikipedia: URI](https://en.wikipedia.org/wiki/URI)

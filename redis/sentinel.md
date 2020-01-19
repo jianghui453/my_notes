@@ -25,6 +25,6 @@ This is the full list of Sentinel capabilities at a macroscopical level (i.e. th
 
 ![](images/sentinel/1.jpg)
 
-## reference
+## 引用
 
 1. [知乎：Redis Sentinel哨兵机制](https://zhuanlan.zhihu.com/p/44474652)

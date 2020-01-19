@@ -2,7 +2,7 @@
 
 Ethernet (IEEE 802.3) Frame Format
 
-![](../Images/Network/NetworkSegment/1.png)
+![](images/network_protocol_header/1.png)
 
 - **PREAMBLE**: Ethernet frame starts with 7-Bytes Preamble. This is a pattern of alternative 0’s and 1’s which indicates starting of the frame and allow sender and receiver to establish bit synchronization. Initially, PRE (Preamble) was introduced to allow for the loss of a few bits due to signal delays. But today’s high-speed Ethernet don’t need Preamble to protect the frame bits.
 - **PRE (Preamble) indicates the receiver that frame is coming and allow the receiver to lock onto the data stream before the actual frame begins.
@@ -15,7 +15,7 @@ Ethernet (IEEE 802.3) Frame Format
 
 ## IP
 
-![](../Images/Network/NetworkSegment/2.png)
+![](images/network_protocol_header/2.png)
 
 - **Protocol Version(4 bits)** : This is the first field in the protocol header. This field occupies 4 bits. This signifies the current IP protocol version being used. Most common version of IP protocol being used is version 4 while version 6 is out in market and fast gaining popularity.
 - **Header Length(4 bits)** : This field provides the length of the IP header. The length of the header is represented in 32 bit words. This length also includes IP options (if any). Since this field is of 4 bits so the maximum header length allowed is 60 bytes. Usually when no options are present then the value of this field is 5. Here 5 means five 32 bit words ie 5 *4 = 20 bytes.
@@ -29,14 +29,14 @@ Ethernet (IEEE 802.3) Frame Format
 - **Header Checksum(16 bits)** : This fields represents a value that is calculated using an algorithm covering all the fields in header (assuming this very field to be zero). This value is calculated and stored in header when IP data gram is sent from source to destination and at the destination side this checksum is again calculated and verified against the checksum present in header. If the value is same then the datagram was not corrupted else its assumed that data gram was received corrupted. So this field is used to check the integrity of an IP datagram.
 - **Source and destination IP(32 bits each)** : These fields store the source and destination address respectively. Since size of these fields is 32 bits each so an IP address os  maximum length of 32 bits can be used. So we see that this limits the number of IP addresses that can be used. To counter this problem, IP V6 has been introduced which increases this capacity.
 - **Options(Variable length)** : This field represents a list of options that are active for a particular IP datagram. This is an optional field that could be or could not be present. If any option is present in the header then the first byte is represented as follows :
-![](../Images/Network/NetworkSegment/3.png)
+![](images/network_protocol_header/3.png)
 In the description above, the ‘copy flag’ means that copy this option to all the fragments in case this IP datagram gets fragmented. The ‘option class’ represents the following values: 0 -> control, 1-> reserved, 2 -> debugging and measurement, and 3 -> reserved. Some of the options are given below :
-![](../Images/Network/NetworkSegment/4.png)
+![](images/network_protocol_header/4.png)
 - **Data** : This field contains the data from the protocol layer that has handed over the data to IP layer. Generally this data field contains the header and data of the transport layer protocols. Please note that each TCP/IP layer protocol attaches its own header at the beginning of the data it receives from other layers in case of source host and in case of destination host each protocol strips its own header and sends the rest of the data to the next layer.
 
 ## TCP
 
-![](../Images/Network/NetworkSegment/5.png)
+![](images/network_protocol_header/5.png)
 
 - **Source Port Address**: 16 bit field that holds the port address of the application that is sending the data segment.
 - **Destination Port Address**: 16 bit field that holds the port address of the application in the host that is receiving the data segment.
@@ -56,7 +56,7 @@ In the description above, the ‘copy flag’ means that copy this option to all
 
 ## UDP (User Datagram Protocol)
 
-![](../Images/Network/NetworkSegment/6.png)
+![](images/network_protocol_header/6.png)
 
 - **Source Port** : Source Port is 2 Byte long field used to identify port number of source.
 - **Destination Port** : It is 2 Byte long field, used to identify the port of destined packet.

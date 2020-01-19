@@ -6,6 +6,6 @@ Because they avoid overhead from operating system process rescheduling or contex
 
 Implementing spin locks correctly offers challenges because programmers must take into account the possibility of simultaneous access to the lock, which could cause race conditions. Generally, such an implementation is possible only with special assembly-language instructions, such as atomic test-and-set operations and cannot be easily implemented in programming languages not supporting truly atomic operations. On architectures without such operations, or if high-level language implementation is required, a non-atomic locking algorithm may be used, e.g. Peterson's algorithm. However, such an implementation may require more memory than a spinlock, be slower to allow progress after unlocking, and may not be implementable in a high-level language if out-of-order execution is allowed.
 
-## Reference
+## 引用
 
 1. [Wikipedia: Spinlock](https://en.wikipedia.org/wiki/Spinlock)

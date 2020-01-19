@@ -16,6 +16,6 @@ The free field stores the number of additional bytes available for use.
 
 Together the len and free field can be thought of as holding the metadata of the buf character array.
 
-## references
+## 引用
 
 1. [Hacking Strings](https://redis.io/topics/internals-sds)

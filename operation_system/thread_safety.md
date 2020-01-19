@@ -24,7 +24,7 @@ Access to shared data is serialized using mechanisms that ensure only one thread
 1. Atomic operations 
 Shared data is accessed by using atomic operations which cannot be interrupted by other threads. This usually requires using special machine language instructions, which might be available in a runtime library. Since the operations are atomic, the shared data is always kept in a valid state, no matter how other threads access it. Atomic operations form the basis of many thread locking mechanisms, and are used to implement mutual exclusion primitives.
 
-## Reference
+## 引用
 
 1. [Wikipedia: Thread safety](https://en.wikipedia.org/wiki/Thread_safety)
 1. [知乎: 谈谈你对线程安全的理解？](https://zhuanlan.zhihu.com/p/59072493)

@@ -10,7 +10,7 @@
 1. 权限验证通过后，进行数据同步，这是耗时最长的操作，主节点将把所有的数据全部发送给从节点。
 1. 当主节点把当前的数据同步给从节点后，便完成了复制的建立流程。接下来，主节点就会持续的把写命令发送给从节点，保证主从数据一致性。
 
-![](../images/redis/replication/1.jpg)
+![](images/master_slaver_replication/1.jpg)
 
 ## 数据间的同步
 
@@ -71,7 +71,7 @@ offset：当前从节点已复制的数据偏移量
 
 ### psync 执行流程
 
-![](../images/redis/replication/2.jpg)
+![](images/master_slaver_replication/2.jpg)
 
 流程说明：从节点发送 psync 命令给主节点，runId 就是目标主节点的 ID，如果没有默认为 -1，offset 是从节点保存的复制偏移量，如果是第一次复制则为 -1.
 
@@ -86,7 +86,7 @@ offset：当前从节点已复制的数据偏移量
 
 全量复制是 Redis 最早支持的复制方式，也是主从第一次建立复制时必须经历的的阶段。触发全量复制的命令是 sync 和 psync。之前说过，这两个命令的分水岭版本是 2.8，redis 2.8 之前使用 sync 只能执行全量不同，2.8 之后同时支持全量同步和部分同步。
 
-![](../images/redis/replication/3.jpg)
+![](images/master_slaver_replication/3.jpg)
 
 1. 发送 psync 命令（spync ？ -1）
 1. 主节点根据命令返回 FULLRESYNC
@@ -106,7 +106,7 @@ Redis 虽然支持无盘复制，即直接通过网络发送给从节点，但�
 
 当从节点正在复制主节点时，如果出现网络闪断和其他异常，从节点会让主节点补发丢失的命令数据，主节点只需要将复制缓冲区的数据发送到从节点就能够保证数据的一致性，相比较全量复制，成本小很多。
 
-![](../images/redis/replication/4.jpg)
+![](images/master_slaver_replication/4.jpg)
 
 1. 当从节点出现网络中断，超过了 repl-timeout 时间，主节点就会中断复制连接。
 1. 主节点会将请求的数据写入到“复制积压缓冲区”，默认 1MB。
@@ -125,7 +125,7 @@ Redis 虽然支持无盘复制，即直接通过网络发送给从节点，但�
 1. 从节点在主线程每隔一秒发送 replconf ack{offset} 命令，给主节点上报自身当前的复制偏移量。
 1. 主节点收到 replconf 信息后，判断从节点超时时间，如果超过 repl-timeout 60 秒，则判断节点下线。
 
-![](../images/redis/replication/5.jpg)
+![](images/master_slaver_replication/5.jpg)
 
 ## 异步复制
 
@@ -137,8 +137,8 @@ Redis 虽然支持无盘复制，即直接通过网络发送给从节点，但�
 1. 主节点处理完后返回响应结果
 1. 对于修改命令，异步发送给从节点，从节点在主线程中执行复制的命令。
 
-![](../images/redis/replication/6.jpg)
+![](images/master_slaver_replication/6.jpg)
 
-## reference
+## 引用
 
 1. [知乎：深入Redis：详解 Redis主从复制的原理!](https://zhuanlan.zhihu.com/p/60239657)

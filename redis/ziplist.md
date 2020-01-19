@@ -1,6 +1,6 @@
 # ziplist
 
-![](../images/redis/ziplist/1.png)
+![](images/ziplist/1.png)
 
 | field | Meaning |
 | --- | --- |
@@ -15,7 +15,7 @@ ziplist 查找数据的时候是通过遍历进行查找。
 
 ## example
 
-![](../images/redis/ziplist/2.png)
+![](images/ziplist/2.png)
 
 - 这个ziplist一共包含33个字节。字节编号从byte[0]到byte[32]。图中每个字节的值使用16进制表示。
 - 头4个字节（0x21000000）是按小端（little endian）模式存储的<zlbytes>字段。什么是小端呢？就是指数据的低字节保存在内存的低地址中（参见维基百科词条Endianness）。因此，这里<zlbytes>的值应该解析成0x00000021，用十进制表示正好就是33。
@@ -27,7 +27,7 @@ ziplist 查找数据的时候是通过遍历进行查找。
 - 接下来3个字节（byte[29..31]）是最后一个数据项，它的格式与前面的数据项存储格式不太一样。其中，第1个字节prevrawlen=5，表示前一个数据项占用5个字节；第2个字节=FE，相当于前面定义的9种情况中的第8种，所以后面还有1个字节用来表示真正的数据，并且以整数表示。它的值是20（0x14）。
 - 最后1个字节（byte[32]）表示<zlend>，是固定的值255（0xFF）。
 
-## references
+## 引用
 
 1. [Ziplist for redis source code analysis tutorial](https://developpaper.com/ziplist-for-redis-source-code-analysis-tutorial/)
 1. [Redis内部数据结构详解(4)——ziplist](http://zhangtielei.com/posts/blog-redis-ziplist.html)
