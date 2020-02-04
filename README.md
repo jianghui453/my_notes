@@ -1,2 +1,1 @@
-# StydyNotes
 My study notes
