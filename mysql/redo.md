@@ -6,10 +6,6 @@ The redo log is a disk-based data structure used during crash recouvery to corre
 
 首先我们先明确一下InnoDB的修改数据的基本流程，当我们想要修改DB上某一行数据的时候，InnoDB是把数据从磁盘读取到内存的缓冲池上进行修改。这个时候数据在内存中被修改，与磁盘中相比就存在了差异，我们称这种有差异的数据为脏页。InnoDB对脏页的处理不是每次生成脏页就将脏页刷新回磁盘，这样会产生海量的IO操作，严重影响InnoDB的处理性能。对于此，InnoDB有一套完善的处理策略，与我们这次主题关系不大，表过不提。既然脏页与磁盘中的数据存在差异，那么如果在这期间DB出现故障就会造成数据的丢失。为了解决这个问题，redo log就应运而生了。
 
-## Redo log工作原理
-
-在讲Redo log工作原理之前，先来学习一下MySQL的一些基础：
-
 ### 日志类型
 
 ![](images/redo/1.jpg)
