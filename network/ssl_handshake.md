@@ -23,3 +23,5 @@
 ## HTTPS连接建立过程
 
 ![](images/ssl_handshake/2.png)
+
+![](images/ssl_handshake/3.jpg)
