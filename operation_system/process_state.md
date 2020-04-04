@@ -12,22 +12,7 @@ A ready queue or run queue is used in computer scheduling. Modern computers are 
 
 ## Running
 
-A process moves into the running state when it is chosen for execution. The process's instructions are executed by one of the CPUs (or cores) of the system. There is at most one running process per CPU or core. A process can run in either of the two modes, namely kernel mode or user mode.[1][2]
-
-### Kernel mode
-
-Processes in kernel mode can access both: kernel and user addresses.
-Kernel mode allows unrestricted access to hardware including execution of privileged instructions.
-Various instructions (such as I/O instructions and halt instructions) are privileged and can be executed only in kernel mode.
-A system call from a user program leads to a switch to kernel mode.
-
-### User mode
-Processes in user mode can access their own instructions and data but not kernel instructions and data (or those of other processes).
-When the computer system is executing on behalf of a user application, the system is in user mode. However, when a user application requests a service from the operating system (via a system call), the system must transition from user to kernel mode to fulfill the request.
-User mode avoids various catastrophic failures:
-There is an isolated virtual address space for each process in user mode.
-User mode ensures isolated execution of each process so that it does not affect other processes as such.
-No direct access to any hardware device is allowed.
+A process moves into the running state when it is chosen for execution. The process's instructions are executed by one of the CPUs (or cores) of the system. There is at most one running process per CPU or core. A process can run in either of the two modes, namely kernel mode or user mode.
 
 ## Blocked
 
