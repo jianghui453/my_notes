@@ -4,7 +4,7 @@
 字符串
 常量
 指针
-Channal
+Channel
 数组（当数组元素可比较时）
 Interface（当动态类型可比较时）
 Struct（当字段都可比较时）
