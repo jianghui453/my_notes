@@ -154,7 +154,7 @@ server.on('request', handleReequest);
 
 ## XSS 攻击的防范
 
-### CSP
+### CSP (Content Security Policy)
 
 现在主流的浏览器内置了防范 XSS 的措施，例如 CSP。但对于开发者来说，也应该寻找可靠的解决方案来防止 XSS 攻击。
 
