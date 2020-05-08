@@ -131,3 +131,17 @@ int main(int argc, char** argv)
     exit(0);
 }
 ```
+
+## 两种工作模式
+
+### LT
+
+水平触发时默认的工作方式，如果一个文件描述符就绪了，不进行任何操作，后续还会继续通知。
+
+### ET
+
+边缘触发模式会在文件描述符从未就绪变为就绪时会触发一次，且只触发一次，后续不再通知。
+
+## 引用
+
+1. [epoll的ET和LT模式详解](https://blog.csdn.net/eroswang/article/details/4481521)
