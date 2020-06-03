@@ -42,3 +42,19 @@ This is a linux testfile!
 Linux test  
 newline 
 ```
+
+## df
+
+查看磁盘使用情况
+
+## free
+
+查看内存使用情况
+
+## strace
+
+查看进程的系统调用
+
+## pstrace
+
+显示每个进程的栈跟踪。

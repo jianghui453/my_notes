@@ -21,6 +21,3 @@ To recover from a MySQL server crash, the only requirement is to restart the MyS
 You cannot cancel transactions that are being rooled back. In extreme cases, when rolling back transactions is expected to take an exceptionally long time, it may be faster to start InnoDB with an innodb_force_recovery setting of 3 or greater.
 1. Change buffer merge: Applying changes from the change buffer (part of the system tablespace) to leaf pages of secondary indexes, as the index pages are read to the buffer pool.
 1. Purge: Deleteing delete-marked records that are no loner visible to active transactions.
-
-
-

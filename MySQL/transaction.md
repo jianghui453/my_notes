@@ -53,6 +53,10 @@ InnoDB supports each of the transaction isolation levels described here using di
 
 SELECT statements are performed in a nonlocking fashion, but a possible earlier version of a row might be used. Thus, using this isolation level, such reads are not consistent. This is also called a **dirty read**. Otherwise, this isolation level works like READ COMMITTED.
 
+#### 脏读
+
+读到其他事务未提交的数据
+
 ### READ COMMITED
 
 For locking reads (SELECT with FOR UPDATE or FOR SHARE), UPDATE statements, and DELETE statements, InnoDB locks only index records, not the gaps before them, and thus permits the free insertion of new records next to locked records. **Gap locking is only used for foreign-key constraint checking and duplicate-key checking.**
@@ -65,6 +69,10 @@ Using READ COMMITTED has additional effects:
 
 - For UPDATE statements, if a row is already locked, InnoDB performs a “semi-consistent” read, returning the latest committed version to MySQL so that MySQL can determine whether the row matches the WHERE condition of the UPDATE. If the row matches (must be updated), MySQL reads the row again and this time InnoDB either locks it or waits for a lock on it.
 
+#### 不可重复读
+
+多次读取记录得到不同的结果（其他事务修改了记录）
+
 ### REPEATABLE READ
 
 This is the default isolation level for InnoDB. Consistent reads within the same transaction read the **snapshot established** by the first read. This means that if you issue several plain (nonlocking) SELECT statements within the same transaction, these SELECT statements are consistent also with respect to each other.
@@ -73,6 +81,10 @@ For locking reads (SELECT with FOR UPDATE or FOR SHARE), UPDATE, and DELETE stat
 
     - For a unique index with a unique search condition, InnoDB locks only the index record found, not the gap before it.
     - For other search conditions, InnoDB locks the index range scanned, using gap locks or next-key locks to block insertions by other sessions into the gaps covered by the range. For information about gap locks and next-key locks。
+
+#### 幻读
+
+多次读取得到不同的记录（其他事务新增了记录）
 
 ### SERIALIZABLE
 
