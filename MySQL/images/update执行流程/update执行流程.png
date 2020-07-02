@@ -1,0 +1,14 @@
+Will not apply HSTS. The HSTS database must be a regular and non-world-writable file.
+ERROR: could not open HSTS store at '/home/xjh/.wget-hsts'. HSTS will be disabled.
+--2020-06-22 09:37:30--  https://pic3.zhimg.com/v2-33018662d8baaa222effc14419fdd74a_b.jpg
+Resolving pic3.zhimg.com (pic3.zhimg.com)... 183.47.233.81, 183.47.233.84, 183.47.233.90, ...
+Connecting to pic3.zhimg.com (pic3.zhimg.com)|183.47.233.81|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 72699 (71K) [image/jpeg]
+Saving to: ‘v2-33018662d8baaa222effc14419fdd74a_b.jpg’
+
+     0K .......... .......... .......... .......... .......... 70% 7.87M 0s
+    50K .......... ..........                                 100%  192M=0.006s
+
+2020-06-22 09:37:30 (11.0 MB/s) - ‘v2-33018662d8baaa222effc14419fdd74a_b.jpg’ saved [72699/72699]
+
