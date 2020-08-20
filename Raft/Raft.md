@@ -1,4 +1,4 @@
-# raft
+# Raft
 
 ### Raft 节点状态
 
