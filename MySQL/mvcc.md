@@ -7,7 +7,9 @@ InnoDB uses the information in the rollback segment to perform the undo operatio
 Internally, InnoDB adds three fields to each row stored in the database
 
 - A 6-byte DB\_TRX\_ID field indicates the transaction identifier for the last transaction that inserted or updated the row. Also, a deletion is treated internally as an update where a special bit in the row is set to mark it as deleted.
+
 - Each row also contains a  7-byte DB\_ROLL\_PTR field called the roll pointer. The roll pointer points to an **undo log** record written to the roolback segment. If the row was updated, the undo log record contains the information necessary to rebuild the content of the row before it was updated.
+
 - A 6-byte DB\_ROW\_ID field contains a row ID that increase monotonically as new rows are inserted. If InnoDB generates a clustered index automatically, the index contains row ID values. Otherwise, the DB\_ROW\_ID column does not appear in any index.
 
 In the InnoDB multi-versioning scheme, a row is not physically removed from the database immediately when you delete it with an SQL statement. InnoDB only physically removes the corresponding row and its index records when it discards the update undo log record written for the deletion. This removal operation is called a purge, and itis quite fast, usually taking the same order of time as the SQL statement that did the deletion.
